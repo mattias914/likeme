@@ -1,4 +1,4 @@
-const {Pool} = require('pg');
+/*const {Pool} = require('pg');
 
 
 const pool = new Pool({
@@ -30,4 +30,4 @@ const agregarPost = async (titulo , img , descripcion ) => {
 
 
 
-module.exports = { obtenerPosts , agregarPost};
+module.exports = { obtenerPosts , agregarPost};*/

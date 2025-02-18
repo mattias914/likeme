@@ -1,20 +1,14 @@
 const cors = require('cors');
 const express = require('express');
-const { obtenerPosts , agregarPost} = require('./consultas');
+const {  } = require('./consultas');
+const likemeRoutes = require('./routes/likemeRoutes');
 const app = express();
+const port = 3000;
 
 app.use(cors());
 app.use(express.json());
-app.listen(3000, console.log('servidor encendido'));
+app.use(likemeRoutes);
 
-
-app.get("/posts", async (req, res) => {
-  const posts = await obtenerPosts();
-  res.json(posts);
-});
-
-app.post("/posts", async (req, res) => {
-  const {titulo , img , descripcion } = req.body;
-  await agregarPost(titulo , img , descripcion )
-  res.send("post agregado correctamente")
+app.listen(port , () => {
+  console.log('Servidor levantado en puerto',port);
 });
